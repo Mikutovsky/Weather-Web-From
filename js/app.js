@@ -1,0 +1,59 @@
+function timeConverter(value, yearFlag = true) {
+  let inst = new Date(value * 1000),
+    year = inst.getFullYear(),
+    month = inst.getMonth(),
+    date = inst.getDate();
+  //hides or shows the year
+  if (yearFlag) {
+    time = date + `${month < 10 ? '.0' + month : '.' + month}` + '.' + year;
+  } else {
+    time = date + `${month < 10 ? '.0' + month : '.' + month}`;
+  }
+  return time;
+}
+
+function getAverageTemp(value) {
+  let tempCounter = 0;
+  let tempCounterIterator = 0;
+  //summation of all daytime temperatures
+  for (const key in value) {
+    if (key !== 'min' && key != 'max') {
+      tempCounter += value[key];
+      tempCounterIterator++;
+    }
+  }
+  return Math.ceil(tempCounter / tempCounterIterator);
+}
+
+function getUnixTime(value, i = 0) {
+  return value[i].dt;
+}
+
+function getCurrentDateTemp(value) {
+  return value[0].temp;
+}
+
+function getIcons(value) {
+  return value.weather[0].icon;
+}
+
+function findWeatherTitle() {
+  let weatherTitle = document.querySelector('.weather-panel__title-value');
+  return weatherTitle;
+}
+
+function findCurrentDateTitle() {
+  let currentDateTitle = document.querySelector('.current-date__info');
+  return currentDateTitle;
+}
+
+function findWeatherList() {
+  let WeatherList = document.querySelector('.weather-panel__list');
+  return WeatherList;
+}
+
+//необходимо
+//1. отправить запрос и получть данные - готово.
+//2. найти данные о погоде на текущий день. Высчитать среднюю температурру.
+//3. найти данные на ближайщие три дня. Получить их дату и иконки.
+//Финал: отрисовать полученные данные на фронте.
