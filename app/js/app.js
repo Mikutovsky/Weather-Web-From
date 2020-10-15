@@ -1,8 +1,22 @@
 function timeConverter(value, yearFlag = true) {
-  let inst = new Date(value * 1000),
-    year = inst.getFullYear(),
-    month = inst.getMonth(),
-    date = inst.getDate();
+  let months = [
+    'Янв',
+    'Фев',
+    'Мрт',
+    'Апр',
+    'Май',
+    'Июн',
+    'Июл',
+    'Авг',
+    'Сен',
+    'Окт',
+    'Нбр',
+    'Дек',
+  ];
+  let inst = new Date(value * 1000);
+  let year = inst.getFullYear();
+  let month = months[inst.getMonth()];
+  let date = inst.getDate();
   //hides or shows the year
   if (yearFlag) {
     time = date + `${month < 10 ? '.0' + month : '.' + month}` + '.' + year;
