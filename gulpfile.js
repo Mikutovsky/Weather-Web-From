@@ -15,7 +15,6 @@ gulp.task('minhtml', () => {
   return gulp
     .src('app/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('build/'));
 });
 
