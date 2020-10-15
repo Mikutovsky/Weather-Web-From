@@ -1,8 +1,8 @@
-let lat = 57.1914,
-  lon = 39.4139,
-  apiKey = 'a9807b6fa36e4f193836a886dff829a1',
-  weatherMeasures = 'current,minutely,hourly', //exclusion of time ranges
-  units = 'metric'; //display in celsius and minutes
+let lat = 57.1914;
+let lon = 39.4139;
+const apiKey = 'a9807b6fa36e4f193836a886dff829a1';
+let weatherMeasures = 'current,minutely,hourly'; //exclusion of time ranges
+let units = 'metric'; //display in celsius and minutes
 
 const myUrl = `https://api.openweathermap.org/data/2.5/onecall?
 lat=${lat}
