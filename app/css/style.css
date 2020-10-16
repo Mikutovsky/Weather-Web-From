@@ -43,6 +43,14 @@ li {
     background-color: #f1f6fc;
 }
 
+.weather-panel__temp{
+    font-weight: 700;
+}
+
+.weather-panel__temp::after {
+    content: '\00B0';
+}
+
 .weather-panel__title {
     font-size: 30px;
 }

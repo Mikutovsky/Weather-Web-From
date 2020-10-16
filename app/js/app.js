@@ -43,12 +43,12 @@ function getUnixTime(value, i = 0) {
   return value[i].dt;
 }
 
-function getCurrentDateTemp(value) {
-  return value[0].temp;
+function getCurrentDateTemp(value, i = 0) {
+  return value[i].temp;
 }
 
-function getIcons(value) {
-  return value.weather[0].icon;
+function getIcons(value, i = 0) {
+  return value.weather[i].icon;
 }
 
 function findWeatherTitle() {
